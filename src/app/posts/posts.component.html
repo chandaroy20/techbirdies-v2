@@ -1,0 +1,51 @@
+<!--Grid row-->
+<div class="row mb-4">
+  <!--Grid column-->
+  <div class="col-lg-5 col-md-12 mb-4 mr-4" *ngFor="let post of Posts;">
+
+    <!--Card-->
+    <div class="card">
+      <div *ngIf="post.myFile">
+        <div *ngIf="getFileType(post.myFile)==='mp4'">
+          <div class="view overlay">
+            <div class="embed-responsive rounded-top" style="height:250px;text-align: -webkit-center;">
+              <video width="320" height="240" controls>
+                <source [src]="post.myFile" type="video/mp4">
+                <source [src]="post.myFile" type="video/ogg">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+        <div
+          *ngIf="getFileType(post.myFile)==='jpg' || getFileType(post.myFile)==='bmp' || getFileType(post.myFile)==='gif' || getFileType(post.myFile)==='png'">
+          <div class="view overlay">
+            <div class="embed-responsive rounded-top" style="height: 250px;text-align: -webkit-center;">
+              <img [src]="post.myFile" class="img-fluid" alt="" style="width:100%">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Card content-->
+      <div class="card-body" style="font-size:smaller">
+        <h5 class="mt-1 mb-2 pt-1 pb-1 badge bg-secondary">{{post.category}}</h5>
+        <h6 class="mt-1 pt-1 pb-1" style="color:#797979">{{post.shortDescription|uppercase}}</h6>
+        <div class="post" [innerHTML]="post.content|truncateText:30" style="height:99px;overflow:hidden"></div>
+        <div class="clearfix"></div>
+        <div class="btn btn-sm teal white-text" (click)="gotoDetails(post._id)">Read More</div>
+        <hr>
+        <div>
+          <span class="mt-0 " style="float:right;">{{post.postedBy?.firstName+' '+post.postedBy?.lastName}}</span>
+          <span class="mt-0  pr-2" style="color: gray;float:right;">Posted By:</span>
+          <span class="mt-0  pr-2" style=""><i class="fa fa-clock-o"></i> {{post.postedOn| date:"dd/MM/yy"}}</span>
+        </div>
+      </div>
+
+    </div>
+    <!--/.Card-->
+
+  </div>
+  <!--Grid column-->
+</div>
+<!--Grid row-->

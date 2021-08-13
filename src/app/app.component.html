@@ -1,0 +1,184 @@
+<header id="header" style="height: 250px">
+  <div class="container-fluid">
+
+    <div id="top-social">
+      <a href="https://www.facebook.com/dev.portal.90" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="http://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="http://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="http://pinterest.com/" target="_blank"><i class="fab fa-pinterest"></i></a>
+    </div>
+
+    <!-- <div _ngcontent-ynr-c289="" id="logo">
+
+      <h1 _ngcontent-ynr-c289="" style="
+            padding-bottom: 5px;
+        "><a _ngcontent-ynr-c289="" href="#" style="
+            color: black;
+            font-size: 45px;
+        ">𝚃𝚊𝚕𝚎𝚗𝚝𝚖𝚒𝚝𝚛𝚊
+        </a></h1>
+      <h3 _ngcontent-ynr-c289="" style="
+        "><a _ngcontent-ynr-c289="" href="#" class="" style="
+            color: #b6e2ab;
+            font-size: 12px;
+        ">▁ ▂ ▄ ▅ ▆ ▇ █
+        </a><a _ngcontent-ynr-c289="" href="#" class="" style="
+            margin-top: 12px!important;
+            color: #770f0f;
+            font-size: 12px;
+        ">Ｆｏｌｌｏｗ Ｙｏｕｒ Ｂｌｉｓｓ
+        </a><a _ngcontent-ynr-c289="" href="#" class="" style="
+            color: #b6e2ab;
+            font-size: 13px;
+        "> █ ▇ ▆ ▅ ▄ ▂ ▁
+        </a></h3>
+      <h1 _ngcontent-ynr-c289="" style="
+            padding-top: 17px;
+        "><a _ngcontent-ynr-c289="" href="#" style="
+            color: #d42f2f;
+            font-size: 15px;
+        ">☆☆
+        </a>
+        <a _ngcontent-ynr-c289="" href="#" style="
+            color: #529c10;
+            font-size: 15px;
+        ">★
+        </a>
+        <a _ngcontent-ynr-c289="" href="#" style="
+            color: #d42f2f;
+            font-size: 15px;
+        ">☆☆
+        </a></h1>
+    </div> -->
+    <div id="logo">
+
+      <h1><a href="#"><img src="../assets/images/bg.jpg" alt="Talentmitra" style="width: 250%;height: 200px;"></a>
+      </h1>
+
+    </div>
+
+    <div id="top-search">
+
+    </div>
+
+  </div>
+</header>
+
+
+<!-- Navbar -->
+<nav class="navbar sticky-top navbar-expand-lg black lighter-4 navbar-dark scrolling-navbar" style="height: 62px">
+  <div class="container">
+
+    <!-- Brand -->
+
+    <!-- Collapse -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Links -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      <!-- Left -->
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="">Home
+            <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <!-- <li class="nav-item">
+              <a class="nav-link" routerLink="sections" *ngIf="currentUser">Chapters</a>
+            </li> -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="blogs" *ngIf="currentUser">Blogs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="forum" *ngIf="currentUser">Forum</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" routerLink="about">About Us</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="contact">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"></a>
+        </li>
+
+
+      </ul>
+
+      <!-- Right -->
+      <ul class="navbar-nav nav-flex-icons my-2 my-lg-0 ml-auto">
+        <li class="nav-item dropdown" *ngIf="currentUser">
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false"
+            *ngIf="currentUser.user">{{currentUser.user.firstName?currentUser.user.firstName+' '+currentUser.user.lastName : currentUser.user.email}}</a>
+          <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false" *ngIf="!currentUser.user">Hello Guest</a>
+          <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" routerLink="profile">Update Profile</a>
+          </div>
+        </li>
+        <li class="nav-item" *ngIf="currentUser">
+          <a class="nav-item nav-link" *ngIf="currentUser" (click)="logout()">Logout</a>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+</nav>
+<!-- Navbar -->
+<div class="container-fluid px-0" style="margin-bottom:12rem;">
+  <router-outlet></router-outlet>
+</div>
+<!--Footer-->
+<footer class="page-footer text-center font-small mt-4 " style="width:100%">
+
+
+  <hr class="my-1">
+
+  <!-- Social icons -->
+  <div class="pb-4">
+    <a>
+      <i class="fab fa-facebook-f mr-3"></i>
+    </a>
+
+    <a href="#">
+      <i class="fab fa-twitter mr-3"></i>
+    </a>
+
+    <a href="#">
+      <i class="fab fa-youtube mr-3"></i>
+    </a>
+
+    <a href="#">
+      <i class="fab fa-google-plus-g mr-3"></i>
+    </a>
+
+
+    <a href="#">
+      <i class="fab fa-pinterest mr-3"></i>
+    </a>
+
+    <a href="#">
+      <i class="fab fa-github mr-3"></i>
+    </a>
+
+  </div>
+  <!-- Social icons -->
+
+  <!--Copyright-->
+  <div class="footer-copyright py-2">
+    © 2021 Copyright:
+    <span class="white-text">
+      Techbirdies
+    </span>
+
+  </div>
+  <!--/.Copyright-->
+
+</footer>
+<!--/.Footer-->

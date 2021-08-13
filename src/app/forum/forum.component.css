@@ -1,0 +1,215 @@
+/* .container{
+    background-color: #ecf0f1;
+    margin-top:-3rem;
+} */
+.content {
+    background-color: #ecf0f1;
+    border-top: solid 1px #e0e4e5;
+}
+.post {
+    background-color: #ffffff;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px #c9cccd;
+    margin-bottom: 20px;
+}
+.post .wrap-ut {
+    width: 85%;
+}
+
+.post .userinfo {
+    width: 15%;
+    padding: 20px 0 15px 15px;
+}
+.post .posttext {
+    width: 85%;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    color: #000;
+    font-size: 14px;
+    font-family: 'Open Sans Light', sans-serif;
+    line-height: 25px;
+}
+.post .postinfo {
+    width: 15%;
+    border-left: solid 1px #f1f1f1;
+}
+.post .comments {
+    border-bottom: solid 1px #f1f1f1;
+    padding: 18px 0 25px 0;
+    text-align: center;
+}
+.post .comments .commentbg {
+    background-color: #bdc3c7;
+    border-radius: 2px;
+    display: inline-block;
+    padding: 12px 17px;
+    color: #ffffff;
+    font-size: 14px;
+    font-family: 'Open Sans Bold', sans-serif;
+    position: relative;
+}
+.post .views {
+    border-bottom: solid 1px #f1f1f1;
+    color: #9da6aa;
+    font-size: 12px;
+    font-family: 'Open Sans Regular', sans-serif;
+    text-align: center;
+    line-height: 29px;
+}
+.post .views i {
+    font-size: 14px;
+}
+.post .time {
+    color: #000;
+    font-size: 12px;
+    font-family: 'Open Sans Regular', sans-serif;
+    text-align: center;
+    line-height: 29px;
+}
+.post .time i {
+    font-size: 14px;
+}
+.post .avatar {
+    width: 37px;
+    margin-left: 5px;
+}
+.avatar {
+    position: relative;
+}
+.avatar img {
+    border-radius: 50%;
+}
+img {
+    vertical-align: middle;
+}
+.avatar .green {
+    background-color: #80d3ab;
+}
+.avatar .status {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    line-height: 12px;
+    border-radius: 50%;
+    border: solid 2px #ffffff;
+}
+.post .icons {
+    width: 48px;
+    border-top: solid 1px #f1f1f1;
+    margin-top: 12px;
+    padding-top: 7px;
+}
+.post h2 {
+    color: #000;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.pull-left{
+    float:left;
+}
+.pull-right{
+    float:right;
+}
+
+/* left block */
+.sidebarblock {
+    background-color: #ffffff;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px #c9cccd;
+    margin-bottom: 20px;
+}
+.sidebarblock h3 {
+    color: #000;
+    font-size: 14px;
+    font-family: 'Open Sans Bold', sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+.sidebarblock .divline {
+    height: 1px;
+    line-height: 1px;
+    border-bottom: solid 1px #f1f1f1;
+}
+.sidebarblock .blocktxt {
+    font-size: 14px;
+    color: #000;
+    font-family: 'Open Sans Light', sans-serif;
+    padding: 20px;
+}
+ul.groups {
+    margin: 0;
+    padding: 0;
+}
+ul.groups li {
+    list-style: none;
+    display: block;
+    margin: 0;
+    padding: 0;
+    line-height: 30px;
+}
+ul.groups li a {
+    font-size: 14px;
+    color: #000;
+    font-family: 'Open Sans Light', sans-serif;
+    line-height: 30px;
+}
+ul.groups .badge {
+    background-color: #bdc3c7;
+    font-size: 12px;
+    color: #ffffff;
+    font-family: 'Open Sans Bold', sans-serif;
+    margin-top: 7px;
+}
+
+/* create post */
+.postinfobot {
+    border-top: solid 1px #f1f1f1;
+    line-height: 50px;
+    padding: 0 30px 0 94px;
+}
+.post .userinfo {
+    width: 15%;
+    padding: 20px 0 15px 15px;
+}
+.newtopic input[type=text], .newtopic input[type=password] {
+    border-radius: 2px;
+    box-shadow: none;
+    border: none;
+    background-color: #f1f1f1;
+    padding: 20px;
+    font-size: 14px;
+    color: #000;
+    font-family: 'Open Sans Light', sans-serif;
+    margin-bottom: 20px;
+    height: 50px;
+}
+.newtopic select {
+    border-radius: 2px;
+    box-shadow: none;
+    border: solid 1px #cfd5d7;
+    background-color: #ffffff;
+    font-size: 14px;
+    color: #000;
+    font-family: 'Open Sans Light', sans-serif;
+    margin-bottom: 20px;
+    height: 50px;
+}
+    
+    .newtopic textarea {
+        border-radius: 2px;
+        box-shadow: none;
+        border: none;
+        background-color: #f1f1f1;
+        padding: 20px;
+        font-size: 14px;
+        color: #000;
+        font-family: 'Open Sans Light', sans-serif;
+        margin-bottom: 20px;
+        height: 150px;
+    }

@@ -1,0 +1,78 @@
+<!-- 
+<div class="post beforepagination">
+    <div class="topwrap">
+        <div class="userinfo pull-left">
+            <div class="avatar">
+                <img src="assets/images/birdie.png" alt="" style="height:30px">
+                <div class="status green">&nbsp;</div>
+            </div>
+
+            <div class="icons">
+                <img src="images/icon1.jpg" alt=""><img src="images/icon4.jpg" alt=""><img src="images/icon5.jpg" alt=""><img src="images/icon6.jpg" alt="">
+            </div>
+        </div>
+        <div class="posttext pull-left">
+            <h2>{{topic.title}}</h2>
+            <p>{{topic.description}}</p>
+        </div>
+        <div class="clearfix"></div>
+    </div>                              
+    <div class="postinfobot">
+
+        <div class="likeblock pull-left">
+            <a href="#" class="up"><i class="fa fa-thumbs-up mx-1"></i>25</a>
+            <a href="#" class="down"><i class="fa fa-thumbs-down mx-1"></i>3</a>
+        </div>
+
+        <div class="prev pull-left">                                        
+            <a ><i class="fa fa-reply"></i></a>
+        </div>
+
+        <div class="posted pull-left"><i class="fa fa-clock-o"></i> Posted on : {{topic.postedOn| date:"dd MMM"}} @ {{topic.postedOn| date:"HH:mm"}}</div>
+
+        <div class="clearfix"></div>
+    </div>
+    <form action="#" class="form" method="post">
+        <div class="topwrap">
+            <div class="userinfo pull-left">
+                <div class="avatar">
+                    <img src="assets/images/birdie.png" alt="" style="height:30px">
+                    <div class="status green">&nbsp;</div>
+                </div>
+
+                <div class="icons">
+                </div>
+            </div>
+            <div class="posttext pull-left">
+                <div class="textwraper">
+                    <div class="postreply">Post a Reply</div>
+                    <textarea name="reply" id="reply" placeholder="Type your message here" [(ngModel)]="comment"></textarea>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>                              
+        <div class="postinfobot"> 
+            <div class="pull-right postreply">
+                <div class="pull-left"><button type="submit" class="btn btn-post" (click)="onComment()">Post Reply</button></div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </form>
+</div>
+
+<div class="comments">
+<div class="comment post" *ngFor="let comment of topic?.comments">
+    <div class="topwrap">
+        <div class="posttext pull-left">
+            <h6 class="blue-text">{{comment.commentedByName}}
+                <span class="pull-right grey-text">{{comment.commentedOn |date:"dd/MM/yy"}}</span>
+            </h6>
+            <div class="">
+                <p>{{comment.commentText}}</p>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+</div> -->

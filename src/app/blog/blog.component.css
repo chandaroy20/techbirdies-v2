@@ -1,0 +1,8 @@
+@import "../../assets/blog.min.css";
+.badge {
+    background-color: #bdc3c7;
+    font-size: 12px;
+    color: #ffffff;
+    font-family: 'Open Sans Bold', sans-serif;
+    float: right;
+}

@@ -1,0 +1,162 @@
+<!--Section: Post-->
+<section class="mt-4">
+
+    <!--Grid row-->
+    <div class="row">
+        <!--Grid column-->
+        <div class="col-md-12 mb-4">
+            <!--Card-->
+            <div class="card mb-4">
+                <!--Card content-->
+                <div class="card-body">
+
+                    <p class="h6 my-4">{{post.category}} </p>
+                    <div *ngIf="post.myFile">
+                        <div *ngIf="getFileType(post.myFile)==='mp4'">
+                            <div class="view overlay">
+                                <div class="embed-responsive rounded-top">
+                                    <video width="320" height="240" class="img-fluid" controls>
+                                        <source [src]="post.myFile" type="video/mp4">
+                                        <source [src]="post.myFile" type="video/ogg">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            *ngIf="getFileType(post.myFile)==='jpg' || getFileType(post.myFile)==='bmp' || getFileType(post.myFile)==='png'|| getFileType(post.myFile)==='gif'">
+                            <div class="view overlay">
+                                <div class="embed-responsive rounded-top">
+                                    <img [src]="post.myFile" alt="" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br><br>
+                    <div style="padding:3rem" class="post" [innerHTML]="post.content"></div>
+
+                </div>
+
+            </div>
+            <!--/.Card-->
+
+            <!--Card About Author-->
+            <div class="card mb-4">
+
+                <div class="card-header font-weight-bold">
+                    <span>About author</span>
+                    <!-- <span class="pull-right">
+                        <a href="">
+                            <i class="fab fa-facebook-f mr-2"></i>
+                        </a>
+                        <a href="">
+                            <i class="fab fa-twitter mr-2"></i>
+                        </a>
+                        <a href="">
+                            <i class="fab fa-instagram mr-2"></i>
+                        </a>
+                        <a href="">
+                            <i class="fab fa-linkedin-in mr-2"></i>
+                        </a>
+                    </span> -->
+                </div>
+
+                <!--Card content-->
+                <div class="card-body">
+
+                    <div class="media d-block d-md-flex mt-3">
+                        <img class="d-flex mb-3 mx-auto z-depth-1"
+                            [src]="post.postedBy?.photo"
+                            alt="Generic placeholder image" style="width: 100px;">
+                        <div class="media-body text-center text-md-left ml-md-3 ml-0">
+                            <a href="javascript:void(0)" (click)="goToUserProfile(post.postedBy?._id)">
+                                <h6 class="mt-0 font-weight-bold">{{post.postedBy?.firstName+' '+post.postedBy?.lastName}}
+                                </h6>
+                            </a>
+                            <p *ngIf="post.postedBy.company">Works at {{post.postedBy?.company}}</p>
+                            <p>{{post.postedBy?.aboutMe}}</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <!--/.Card-->
+
+            <!--Reply-->
+            <div class="card mb-3" id="comment">
+                <div class="card-header font-weight-bold">Leave a reply</div>
+                <div class="card-body">
+
+                    <!-- Default form reply -->
+                    <!-- Comment -->
+                    <div class="form-group">
+                        <label for="replyFormComment">Your comment</label>
+                        <textarea class="form-control" id="replyFormComment" rows="3" [(ngModel)]="comment"></textarea>
+                    </div>
+
+                    <div class="text-center mt-4">
+                        <button class="btn btn-info btn-md" (click)="onComment()" type="submit">Post</button>
+                    </div>
+                    <!-- Default form reply -->
+
+                </div>
+            </div>
+            <!--/.Reply-->
+
+            <!--Comments-->
+            <div class="card card-comments mb-3" style="height:400px;overflow-y:scroll">
+                <div class="card-header font-weight-bold">{{post.comments?post.comments.length : 0}} comments</div>
+                <div class="card-body">
+                    <div *ngIf="post.comments">
+                        <div class="media d-block d-md-flex mt-4" *ngFor="let comment of post.comments">
+                            <img class="d-flex mb-3 mx-auto "
+                                [src]="comment.commentedBy?.photo"
+                                alt="Generic placeholder image">
+                            <div class="media-body text-center text-md-left ml-md-3 ml-0">
+                                <h6 class="mt-0 font-weight-bold">{{comment.commentedBy?.firstName+' '+comment.commentedBy?.lastName}}
+                                    <a class="pull-right" (click)="onShowReplyForm(comment._id)">
+                                        <i class="fas fa-reply"></i>
+                                    </a>
+                                </h6>
+                                {{comment.commentText}}
+                                <div *ngIf="comment.commentReplies">
+                                    <div class="media d-block d-md-flex mt-3"
+                                        *ngFor="let commentReply of comment.commentReplies">
+                                        <img class="d-flex mb-3 mx-auto "
+                                            [src]="commentReply.commentedBy?.photo"
+                                            alt="Generic placeholder image">
+                                        <div class="media-body text-center text-md-left ml-md-3 ml-0">
+                                            <h6 class="mt-0 font-weight-bold">{{commentReply.commentedBy?.firstName+' '+commentReply.commentedBy?.lastName}}
+                                            </h6>
+                                            {{commentReply.commentText}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Quick Reply -->
+                                <div class="form-group mt-4" [id]="comment._id" *ngIf="showReplyForm === comment._id">
+                                    <label for="quickReplyFormComment">Your comment</label>
+                                    <textarea class="form-control" id="quickReplyFormComment" rows="5"
+                                        [(ngModel)]="commentReply"></textarea>
+
+                                    <div class="text-center">
+                                        <button class="btn btn-info btn-sm"
+                                            (click)="onCommentReply(comment._id)">Post</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/.Comments-->
+
+
+
+        </div>
+        <!--Grid column-->
+    </div>
+    <!--Grid row-->
+
+</section>
+<!--Section: Post-->

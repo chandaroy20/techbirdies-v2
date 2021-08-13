@@ -1,0 +1,33 @@
+<div class="container">
+    <form [formGroup]="postContent" (ngSubmit)="onSubmit()" name="form1">
+        <div class="row  align-items-center mb-4">
+            <label for="category" class="col-sm-4">Category</label><br>
+            <div class="text-center mb-3 col-sm-8 form-group">
+                <!-- <input type="text" formControlName="category" class="form-control"> -->
+                <select name="category" id="category" class="form-control" formControlName="category" required>
+                    <option value="" disabled="" selected="">Select Category</option>
+                    <option [value]="category.name" *ngFor="let category of categories">{{category.name}}</option>
+                </select>
+            </div><br>
+            <label for="category" class="col-sm-4">Short Description</label><br>
+            <div class="text-center mb-3 col-sm-8 form-group">
+                <input type="text" formControlName="shortDescription" class="form-control" required>
+            </div><br>
+            <div class="text-center mb-3 col-md-12 form-group">
+                <angular-editor formControlName="content" [config]="editorConfig"></angular-editor>
+            </div>
+            <div class="text-center mb-3 col-md-4 form-group">
+                <!-- File Input -->
+                <div class="form-group">
+                    <input type="file" (change)="uploadFile($event)">
+                </div>
+            </div>
+        </div>
+        <div class="row  align-items-center mb-4">
+            <div class="text-center mb-3 col-md-3 form-group">
+                <button  class="btn btn-pink btn-rounded btn-block btn-rounded z-depth-1">
+                    Post</button>
+            </div>
+        </div>
+    </form>
+</div>

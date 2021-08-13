@@ -1,0 +1,51 @@
+@import "../../assets/blog.min.css";
+
+.talentmitra-goal{
+  color: white;
+  text-shadow: 0.2px 0.1px 2px black;
+  font-size: 29px;
+}
+
+.example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.example-headers-align .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+.example-container .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+label{
+  color:white!important;
+}
+.nav-item a{
+  color:white!important;
+}
+.nav-item a.active{
+  color:black!important;
+}
+.carousel-item  img{
+  /* padding: 2rem 1rem; */
+  height:500px!important;
+}
+.container{
+  padding:0px!important;
+}
+.row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+  flex-wrap: wrap;
+}
+.row > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
+}

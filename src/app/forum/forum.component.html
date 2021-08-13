@@ -1,0 +1,128 @@
+<section class="content" style="margin-top:3rem">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 col-lg-4 col-xs-4"></div>
+            <div class="col-sm-4 col-lg-4 col-xs-4">
+                <div class="pull-right" style="float: right;display:none">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Search Topics"
+                            aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        <div class="input-group-append">
+                            <span class="input-group-text" id="basic-addon2"><i class="fa fa-search"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 col-lg-4 col-xs-4" style="float: right;">
+                <div class="text-center mb-3 col-md-12 form-group">
+                    <button class="btn teal btn-md white-text" (click)="toggleShow()">Start New Topic</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8">
+
+                <!-- create posts -->
+                <div class="post" *ngIf="showCreate">
+                    <div class="pull-right px-2"><i class="fa fa-times red-text" (click)="close()"></i></div>
+                    <form [formGroup]="topicContent" (ngSubmit)="onSubmit()" name="form1" class="form newtopic">
+                        <div class="topwrap">
+                            <div class="userinfo pull-left">
+                                <div class="avatar">
+                                    <img src="images/avatar4.jpg" alt="">
+                                    <div class="status red">&nbsp;</div>
+                                </div>
+
+                                <div class="icons">
+                                    <img src="images/icon3.jpg" alt=""><img src="images/icon4.jpg" alt=""><img
+                                        src="images/icon5.jpg" alt=""><img src="images/icon6.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="posttext pull-left">
+                                <div>
+                                    <input type="text" placeholder="Enter Topic Title" class="form-control"
+                                        formControlName="title">
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6">
+                                        <select name="category" id="category" class="form-control" formControlName="category">
+                                                <option value="" disabled="" selected="">Select Category</option>
+                                                <option [value]="group._id" *ngFor="let group of groups">{{group._id}}</option>
+                                            </select>
+                                        <input type="text" placeholder="Category" class="form-control"
+                                            formControlName="category">
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">
+                                        <input type="text" placeholder="Sub-Category" class="form-control"
+                                            formControlName="subcategory">
+
+                                        <!-- <select name="subcategory" id="subcategory" class="form-control">
+                                                <option value="" disabled="" selected="">Select Subcategory</option>
+                                                <option value="op1">Option1</option>
+                                                <option value="op2">Option2</option>
+                                            </select> -->
+                                    </div>
+                                </div>
+                                <div>
+                                    <textarea name="desc" id="desc" placeholder="Description" class="form-control"
+                                        formControlName="description"></textarea>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="postinfobot">
+                            <div class="notechbox pull-left">
+                                <input type="checkbox" name="note" id="note" class="form-control">
+                            </div>
+                            <div class="pull-left">
+                                <label for="note"> Email me when some one post a reply</label>
+                            </div>
+                            <div class="pull-right postreply">
+                                <div class="pull-left"><button type="submit" class="btn btn-primary">Post</button></div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </form>
+                </div>
+                <!-- create post -->
+
+                <!-- POST -->
+                <router-outlet></router-outlet>
+
+                <!-- POST -->
+
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <!-- -->
+                <div class="sidebarblock">
+                    <h3>Groups</h3>
+                    <div class="divline"></div>
+                    <div class="blocktxt">
+                        <ul class="groups">
+                            <li *ngFor="let group of groups">
+                                <a (click)="gotoPostsByCategory(group._id)" href="javascript:void(0)">{{group._id}}
+                                    <span class="badge pull-right">{{group.count}}</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- -->
+                <div class="sidebarblock">
+                    <h3>My Active Threads</h3>
+                    <div class="divline"></div>
+                    <div *ngFor="let thread of threads">
+                        <div class="blocktxt">
+                            <a href="javascript:void(0)" (click)="gotoDetails(thread._id)">{{thread.title}}</a>
+                        </div>
+                        <div class="divline"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
