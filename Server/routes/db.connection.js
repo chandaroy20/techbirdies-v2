@@ -1,6 +1,5 @@
 var mongoose = require('mongoose');
-// const url = "your url here";
-const url = "mongodb://dev:chanda20@cluster0-shard-00-00.jchfn.mongodb.net:27017,cluster0-shard-00-01.jchfn.mongodb.net:27017,cluster0-shard-00-02.jchfn.mongodb.net:27017/mydb20?ssl=true&replicaSet=atlas-anafwn-shard-0&authSource=admin&retryWrites=true&w=majority";
+const url = "your url here";
 const connectionParams={
     useNewUrlParser: true,
     useCreateIndex: true,
